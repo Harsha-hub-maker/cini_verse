@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINEVERSE · Movies & Melodies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <i class="fas fa-film"></i> CINE<span>VERSE</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="#trending"><i class="fas fa-fire"></i> Trending</a></li>
+        <li><a href="#toprated"><i class="fas fa-trophy"></i> Top Rated</a></li>
+        <li><a href="#action"><i class="fas fa-bolt"></i> Action</a></li>
+        <li><a href="#songs"><i class="fas fa-music"></i> Songs</a></li>
+        <li><a href="#favourites"><i class="fas fa-heart"></i> Favourites</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="surpriseBtn" aria-label="Surprise me" title="Surprise me!">
+          <i class="fas fa-dice"></i>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="icon-btn" id="openSearch" aria-label="Search" title="Search">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= SEARCH OVERLAY ================= -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-panel">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search movies, songs, artists, genres…" autocomplete="off">
+        <button class="clear-search" id="clearSearch" aria-label="Clear"><i class="fas fa-times"></i></button>
+        <button class="close-search" id="closeSearch" aria-label="Close">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <div class="search-hint"><i class="fas fa-lightbulb"></i> Start typing to search movies, songs, artists, genres…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span> Now Streaming · 4K Ultra HD
+        </div>
+        <h1>Dune: <span class="accent-word">Part Two</span></h1>
+        <div class="meta">
+          <span class="rating"><i class="fas fa-star"></i> 8.8</span>
+          <span class="genre">Sci-Fi · Adventure</span>
+          <span class="year-pill">2024</span>
+          <span class="year-pill">2h 46m</span>
+        </div>
+        <p>Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. A breathtaking cinematic journey beyond imagination.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" id="watchTrailerBtn">
+            <i class="fas fa-play"></i> Watch Trailer
+          </button>
+          <button class="btn-ghost" id="heroFavBtn" data-id="Way9Dexny3w" data-type="movie">
+            <i class="far fa-heart"></i> <span>Add to Favourites</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Rotten Tomatoes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">8.8</div>
+            <div class="stat-label">IMDb Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">$714M</div>
+            <div class="stat-label">Box Office</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-poster">
+        <div class="poster-glow"></div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Dune Part Two Poster">
+          <div class="poster-badge">
+            <i class="fas fa-ticket-alt"></i> Now Playing
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span><i class="fas fa-crown"></i> Dune: Part Two — #1 at the Box Office</span>
+        <span><i class="fas fa-star"></i> Oppenheimer wins 7 Academy Awards</span>
+        <span><i class="fas fa-music"></i> The Weeknd's new album breaks streaming records</span>
+        <span><i class="fas fa-fire"></i> Deadpool &amp; Wolverine — Biggest opening of 2024</span>
+        <span><i class="fas fa-film"></i> Gladiator II — In theaters now</span>
+        <span><i class="fas fa-crown"></i> Dune: Part Two — #1 at the Box Office</span>
+        <span><i class="fas fa-star"></i> Oppenheimer wins 7 Academy Awards</span>
+        <span><i class="fas fa-music"></i> The Weeknd's new album breaks streaming records</span>
+        <span><i class="fas fa-fire"></i> Deadpool &amp; Wolverine — Biggest opening of 2024</span>
+        <span><i class="fas fa-film"></i> Gladiator II — In theaters now</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS BANNER ================= -->
+  <div class="stats-banner">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fas fa-film stat-icon"></i>
+          <div class="stat-number">2,847</div>
+          <div class="stat-text">Movies</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-video stat-icon"></i>
+          <div class="stat-number">1,236</div>
+          <div class="stat-text">Trailers</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-headphones stat-icon"></i>
+          <div class="stat-number">5,192</div>
+          <div class="stat-text">Songs</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-users stat-icon"></i>
+          <div class="stat-number">12.5M</div>
+          <div class="stat-text">Members</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MOVIES TOOLBAR (filter + sort) ================= -->
+  <div class="movies-toolbar-wrap">
+    <div class="container movies-toolbar">
+      <div class="toolbar-group">
+        <span class="toolbar-label"><i class="fas fa-filter"></i> Genre</span>
+        <div class="genre-filters" id="movieGenreFilters">
+          <button class="filter-chip active" data-movie-genre="all">All</button>
+          <button class="filter-chip" data-movie-genre="Action">Action</button>
+          <button class="filter-chip" data-movie-genre="Sci-Fi">Sci-Fi</button>
+          <button class="filter-chip" data-movie-genre="Drama">Drama</button>
+          <button class="filter-chip" data-movie-genre="Crime">Crime</button>
+          <button class="filter-chip" data-movie-genre="Comedy">Comedy</button>
+          <button class="filter-chip" data-movie-genre="Animation">Animation</button>
+          <button class="filter-chip" data-movie-genre="Superhero">Superhero</button>
+        </div>
+      </div>
+      <div class="toolbar-group">
+        <span class="toolbar-label"><i class="fas fa-arrow-down-wide-short"></i> Sort</span>
+        <select id="movieSort" class="sort-select">
+          <option value="default">Default</option>
+          <option value="rating-desc">Rating: High → Low</option>
+          <option value="rating-asc">Rating: Low → High</option>
+          <option value="year-desc">Year: Newest</option>
+          <option value="year-asc">Year: Oldest</option>
+          <option value="title-asc">Title: A → Z</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TRENDING ================= -->
+  <section class="movie-row-section" id="trending">
+    <div class="container">
+      <div class="row-header">
+        <div>
+          <div class="section-title">
+            <i class="fas fa-fire"></i> Trending Now <span class="badge-count">8 movies</span>
+          </div>
+          <div class="section-sub">The hottest releases everyone's talking about this week.</div>
+        </div>
+      </div>
+      <div class="row-scroll">
+
+        <div class="movie-card" data-trailer="Way9Dexny3w" data-title="Dune: Part Two" data-id="Way9Dexny3w" data-genre="Sci-Fi" data-year="2024" data-rating="8.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.8</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Dune Part Two">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="Way9Dexny3w" data-type="movie" data-title="Dune: Part Two" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="Way9Dexny3w" data-title="Dune: Part Two" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Dune: Part Two</h3>
+            <div class="meta-row"><span class="genre-small">Sci-Fi</span><span>2024</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="uYPbbksJxIg" data-title="Oppenheimer" data-id="uYPbbksJxIg" data-genre="Biography" data-year="2023" data-rating="8.5">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.5</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg" alt="Oppenheimer">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="uYPbbksJxIg" data-type="movie" data-title="Oppenheimer" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="uYPbbksJxIg" data-title="Oppenheimer" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Oppenheimer</h3>
+            <div class="meta-row"><span class="genre-small">Biography</span><span>2023</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="pBk4NYhWNMM" data-title="Barbie" data-id="pBk4NYhWNMM" data-genre="Comedy" data-year="2023" data-rating="7.2">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 7.2</span>
+            <span class="quality-tag">HD</span>
+            <img src="https://image.tmdb.org/t/p/w500/1X7vow16X7CnCoexXh4H4F2yDJv.jpg" alt="Barbie">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="pBk4NYhWNMM" data-type="movie" data-title="Barbie" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="pBk4NYhWNMM" data-title="Barbie" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Barbie</h3>
+            <div class="meta-row"><span class="genre-small">Comedy</span><span>2023</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="cqGjhVJWtEg" data-title="Across the Spider-Verse" data-id="cqGjhVJWtEg" data-genre="Animation" data-year="2023" data-rating="8.7">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.7</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" alt="Across the Spider-Verse">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="cqGjhVJWtEg" data-type="movie" data-title="Across the Spider-Verse" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="cqGjhVJWtEg" data-title="Across the Spider-Verse" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Spider-Verse</h3>
+            <div class="meta-row"><span class="genre-small">Animation</span><span>2023</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="qEVUtrk8_B4" data-title="John Wick: Chapter 4" data-id="qEVUtrk8_B4" data-genre="Action" data-year="2023" data-rating="8.0">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.0</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="John Wick 4">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="qEVUtrk8_B4" data-type="movie" data-title="John Wick: Chapter 4" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="qEVUtrk8_B4" data-title="John Wick: Chapter 4" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>John Wick: Chapter 4</h3>
+            <div class="meta-row"><span class="genre-small">Action</span><span>2023</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="mqqft2x_Aa4" data-title="The Batman" data-id="mqqft2x_Aa4" data-genre="Crime" data-year="2022" data-rating="7.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 7.8</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="The Batman">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="mqqft2x_Aa4" data-type="movie" data-title="The Batman" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="mqqft2x_Aa4" data-title="The Batman" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Batman</h3>
+            <div class="meta-row"><span class="genre-small">Crime</span><span>2022</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="qSqVVswa420" data-title="Top Gun: Maverick" data-id="qSqVVswa420" data-genre="Action" data-year="2022" data-rating="8.2">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.2</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg" alt="Top Gun Maverick">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="qSqVVswa420" data-type="movie" data-title="Top Gun: Maverick" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="qSqVVswa420" data-title="Top Gun: Maverick" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Top Gun: Maverick</h3>
+            <div class="meta-row"><span class="genre-small">Action</span><span>2022</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="wxN1T1uxQ2g" data-title="Everything Everywhere All at Once" data-id="wxN1T1uxQ2g" data-genre="Adventure" data-year="2022" data-rating="7.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 7.8</span>
+            <span class="quality-tag">HD</span>
+            <img src="https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg" alt="Everything Everywhere">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="wxN1T1uxQ2g" data-type="movie" data-title="Everything Everywhere All at Once" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="wxN1T1uxQ2g" data-title="Everything Everywhere All at Once" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Everything Everywhere</h3>
+            <div class="meta-row"><span class="genre-small">Adventure</span><span>2022</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOP RATED ================= -->
+  <section class="movie-row-section alt-bg" id="toprated">
+    <div class="container">
+      <div class="row-header">
+        <div>
+          <div class="section-title">
+            <i class="fas fa-trophy"></i> Top Rated Collection <span class="badge-count">8 classics</span>
+          </div>
+          <div class="section-sub">Timeless masterpieces that defined cinema across generations.</div>
+        </div>
+      </div>
+      <div class="movie-grid">
+
+        <div class="movie-card" data-trailer="6hB3S9bIaco" data-title="The Shawshank Redemption" data-id="6hB3S9bIaco" data-genre="Drama" data-year="1994" data-rating="9.3">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 9.3</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" alt="Shawshank Redemption">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="6hB3S9bIaco" data-type="movie" data-title="The Shawshank Redemption" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="6hB3S9bIaco" data-title="The Shawshank Redemption" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Shawshank Redemption</h3>
+            <div class="meta-row"><span class="genre-small">Drama</span><span>1994</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="sY1S34973zA" data-title="The Godfather" data-id="sY1S34973zA" data-genre="Crime" data-year="1972" data-rating="9.2">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 9.2</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="The Godfather">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="sY1S34973zA" data-type="movie" data-title="The Godfather" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="sY1S34973zA" data-title="The Godfather" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Godfather</h3>
+            <div class="meta-row"><span class="genre-small">Crime</span><span>1972</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="EXeTwQWrcwY" data-title="The Dark Knight" data-id="EXeTwQWrcwY" data-genre="Action" data-year="2008" data-rating="9.0">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 9.0</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="EXeTwQWrcwY" data-type="movie" data-title="The Dark Knight" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="EXeTwQWrcwY" data-title="The Dark Knight" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Dark Knight</h3>
+            <div class="meta-row"><span class="genre-small">Action</span><span>2008</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="s7EdQ4FqbhY" data-title="Pulp Fiction" data-id="s7EdQ4FqbhY" data-genre="Crime" data-year="1994" data-rating="8.9">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.9</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" alt="Pulp Fiction">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="s7EdQ4FqbhY" data-type="movie" data-title="Pulp Fiction" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="s7EdQ4FqbhY" data-title="Pulp Fiction" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Pulp Fiction</h3>
+            <div class="meta-row"><span class="genre-small">Crime</span><span>1994</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="bLvqoHBptjg" data-title="Forrest Gump" data-id="bLvqoHBptjg" data-genre="Drama" data-year="1994" data-rating="8.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.8</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg" alt="Forrest Gump">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="bLvqoHBptjg" data-type="movie" data-title="Forrest Gump" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="bLvqoHBptjg" data-title="Forrest Gump" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Forrest Gump</h3>
+            <div class="meta-row"><span class="genre-small">Drama</span><span>1994</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="YoHD9XEInc0" data-title="Inception" data-id="YoHD9XEInc0" data-genre="Sci-Fi" data-year="2010" data-rating="8.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.8</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" alt="Inception">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="YoHD9XEInc0" data-type="movie" data-title="Inception" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="YoHD9XEInc0" data-title="Inception" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Inception</h3>
+            <div class="meta-row"><span class="genre-small">Sci-Fi</span><span>2010</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="qtRKdVHc-cE" data-title="Fight Club" data-id="qtRKdVHc-cE" data-genre="Drama" data-year="1999" data-rating="8.8">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.8</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg" alt="Fight Club">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="qtRKdVHc-cE" data-type="movie" data-title="Fight Club" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="qtRKdVHc-cE" data-title="Fight Club" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Fight Club</h3>
+            <div class="meta-row"><span class="genre-small">Drama</span><span>1999</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="vKQi3bBA1y8" data-title="The Matrix" data-id="vKQi3bBA1y8" data-genre="Sci-Fi" data-year="1999" data-rating="8.7">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.7</span>
+            <span class="quality-tag">IMDb</span>
+            <img src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="The Matrix">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="vKQi3bBA1y8" data-type="movie" data-title="The Matrix" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="vKQi3bBA1y8" data-title="The Matrix" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Matrix</h3>
+            <div class="meta-row"><span class="genre-small">Sci-Fi</span><span>1999</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACTION ================= -->
+  <section class="movie-row-section" id="action">
+    <div class="container">
+      <div class="row-header">
+        <div>
+          <div class="section-title">
+            <i class="fas fa-bolt"></i> Action &amp; Adventure <span class="badge-count">7 movies</span>
+          </div>
+          <div class="section-sub">High-octane thrills, epic battles, and unforgettable heroes.</div>
+        </div>
+      </div>
+      <div class="row-scroll">
+
+        <div class="movie-card" data-trailer="TcMBFSGVi1c" data-title="Avengers: Endgame" data-id="TcMBFSGVi1c" data-genre="Superhero" data-year="2019" data-rating="8.4">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.4</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg" alt="Avengers Endgame">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="TcMBFSGVi1c" data-type="movie" data-title="Avengers: Endgame" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="TcMBFSGVi1c" data-title="Avengers: Endgame" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Avengers: Endgame</h3>
+            <div class="meta-row"><span class="genre-small">Superhero</span><span>2019</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="owK1qxDselE" data-title="Gladiator" data-id="owK1qxDselE" data-genre="Action" data-year="2000" data-rating="8.5">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.5</span>
+            <span class="quality-tag">HD</span>
+            <img src="https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg" alt="Gladiator">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="owK1qxDselE" data-type="movie" data-title="Gladiator" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="owK1qxDselE" data-title="Gladiator" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Gladiator</h3>
+            <div class="meta-row"><span class="genre-small">Action</span><span>2000</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="hEJnMQG9ev8" data-title="Mad Max: Fury Road" data-id="hEJnMQG9ev8" data-genre="Action" data-year="2015" data-rating="8.1">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.1</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/hA2ple9q4qnwxp3hKVNhroipsir.jpg" alt="Mad Max Fury Road">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="hEJnMQG9ev8" data-type="movie" data-title="Mad Max: Fury Road" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="hEJnMQG9ev8" data-title="Mad Max: Fury Road" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Mad Max: Fury Road</h3>
+            <div class="meta-row"><span class="genre-small">Action</span><span>2015</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="wb49-oV0F78" data-title="Mission: Impossible – Fallout" data-id="wb49-oV0F78" data-genre="Spy" data-year="2018" data-rating="7.7">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 7.7</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg" alt="Mission Impossible Fallout">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="wb49-oV0F78" data-type="movie" data-title="Mission: Impossible – Fallout" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="wb49-oV0F78" data-title="Mission: Impossible – Fallout" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Mission: Impossible – Fallout</h3>
+            <div class="meta-row"><span class="genre-small">Spy</span><span>2018</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="eOrNdBpGMv8" data-title="The Avengers" data-id="eOrNdBpGMv8" data-genre="Superhero" data-year="2012" data-rating="8.0">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.0</span>
+            <span class="quality-tag">HD</span>
+            <img src="https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" alt="The Avengers">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="eOrNdBpGMv8" data-type="movie" data-title="The Avengers" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="eOrNdBpGMv8" data-title="The Avengers" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>The Avengers</h3>
+            <div class="meta-row"><span class="genre-small">Superhero</span><span>2012</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="ONHBaC-pfsk" data-title="Deadpool" data-id="ONHBaC-pfsk" data-genre="Comedy" data-year="2016" data-rating="8.0">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 8.0</span>
+            <span class="quality-tag">HD</span>
+            <img src="https://image.tmdb.org/t/p/w500/fSRb7vyIP8rQpL0I47P3qUsEKX3.jpg" alt="Deadpool">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="ONHBaC-pfsk" data-type="movie" data-title="Deadpool" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="ONHBaC-pfsk" data-title="Deadpool" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Deadpool</h3>
+            <div class="meta-row"><span class="genre-small">Comedy</span><span>2016</span></div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-trailer="d9MyW72ELq0" data-title="Avatar: The Way of Water" data-id="d9MyW72ELq0" data-genre="Sci-Fi" data-year="2022" data-rating="7.5">
+          <div class="movie-poster">
+            <span class="rating-tag"><i class="fas fa-star"></i> 7.5</span>
+            <span class="quality-tag">4K</span>
+            <img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Avatar Way of Water">
+            <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+            <div class="card-actions">
+              <button class="card-action like-btn" data-id="d9MyW72ELq0" data-type="movie" data-title="Avatar: The Way of Water" aria-label="Favourite"><i class="far fa-heart"></i></button>
+              <button class="card-action watch-later-btn" data-id="d9MyW72ELq0" data-title="Avatar: The Way of Water" aria-label="Watch later"><i class="far fa-clock"></i></button>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3>Avatar: The Way of Water</h3>
+            <div class="meta-row"><span class="genre-small">Sci-Fi</span><span>2022</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SONGS ================= -->
+  <section class="songs-section" id="songs">
+    <div class="container">
+      <div class="songs-header">
+        <div>
+          <div class="section-title">
+            <i class="fas fa-headphones-alt"></i> Favourite Songs <span class="badge-count">9 tracks</span>
+          </div>
+          <div class="section-sub">Your music collection. Click a track to play! Playing a trailer will pause music automatically.</div>
+        </div>
+        <div class="songs-toolbar">
+          <div class="song-filters" id="songGenreFilters">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="pop">Pop</button>
+            <button class="filter-chip" data-filter="indie">Indie</button>
+            <button class="filter-chip" data-filter="rnb">R&amp;B</button>
+          </div>
+          <select id="songSort" class="sort-select">
+            <option value="default">Default</option>
+            <option value="title-asc">Title: A → Z</option>
+            <option value="title-desc">Title: Z → A</option>
+            <option value="artist-asc">Artist: A → Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="song-list" id="songList">
+
+        <div class="song-item" data-id="faded" data-song="Faded" data-artist="Alan Walker" data-cover="cover-1" data-genre="pop" data-audio="Alan_Walker_-_Faded(256k).mp3">
+          <span class="song-index">01</span>
+          <div class="song-cover cover-1"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Faded</h4>
+            <div class="artist">Alan Walker</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="faded" data-type="song" data-title="Faded" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="faded" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="animal-satranga" data-song="Animal (Satranga)" data-artist="Arijit Singh, Shreyas Puranik" data-cover="cover-2" data-genre="pop" data-audio="ANIMAL__SATRANGA_Song__Ranbir_Kapoor%2CRashmika_Sandeep_V_Arijit%2CShreyas_P%2CSiddharth-Garima__Bhushan_K(256k).mp3">
+          <span class="song-index">02</span>
+          <div class="song-cover cover-2"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Animal (Satranga)</h4>
+            <div class="artist">Arijit Singh, Shreyas Puranik</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="animal-satranga" data-type="song" data-title="Animal (Satranga)" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="animal-satranga" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="broken-angel" data-song="Broken Angel" data-artist="Arash" data-cover="cover-3" data-genre="pop" data-audio="Arash_-_Broken_Angel(256k).mp3">
+          <span class="song-index">03</span>
+          <div class="song-cover cover-3"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Broken Angel</h4>
+            <div class="artist">Arash</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="broken-angel" data-type="song" data-title="Broken Angel" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="broken-angel" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="devara-bgm" data-song="Devara BGM" data-artist="Anirudh Ravichander" data-cover="cover-4" data-genre="rnb" data-audio="Devara_movie_bgm___devara_bgm__anirudh_bgm___NTR_SONGS___bgm_ringtone(256k).mp3">
+          <span class="song-index">04</span>
+          <div class="song-cover cover-4"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Devara BGM</h4>
+            <div class="artist">Anirudh Ravichander</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="devara-bgm" data-type="song" data-title="Devara BGM" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="devara-bgm" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="mockingbird" data-song="Mockingbird" data-artist="Eminem" data-cover="cover-5" data-genre="indie" data-audio="fenekot_-_Mockingbird(256k).mp3">
+          <span class="song-index">05</span>
+          <div class="song-cover cover-5"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Mockingbird</h4>
+            <div class="artist">Eminem</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="mockingbird" data-type="song" data-title="Mockingbird" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="mockingbird" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="kesariya" data-song="Kesariya (Slowed + Reverb)" data-artist="Arijit Singh" data-cover="cover-6" data-genre="pop" data-audio="Kesariya_%255BSlowed_Reverb%255D_Full_Song___Arijit_Singh___Lofi___Revibe(256k).mp3">
+          <span class="song-index">06</span>
+          <div class="song-cover cover-6"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Kesariya (Slowed + Reverb)</h4>
+            <div class="artist">Arijit Singh</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="kesariya" data-type="song" data-title="Kesariya (Slowed + Reverb)" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="kesariya" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="mary-on-a-cross" data-song="Mary on a Cross (Slowed + Reverb)" data-artist="Ghost" data-cover="cover-7" data-genre="indie" data-audio="Mary_On_A_Cross__Slowed_Reverb_(256k).mp3">
+          <span class="song-index">07</span>
+          <div class="song-cover cover-7"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Mary on a Cross (Slowed + Reverb)</h4>
+            <div class="artist">Ghost</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="mary-on-a-cross" data-type="song" data-title="Mary on a Cross (Slowed + Reverb)" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="mary-on-a-cross" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="munjane-manjalli" data-song="Munjane Manjalli" data-artist="Raghu Dixit" data-cover="cover-8" data-genre="pop" data-audio="Munjane_Manjalli___Audio_Song___Just_Maath_Maathali___Kiccha_Sudeep___Ramya___Raghu_Dixit__(256k).mp3">
+          <span class="song-index">08</span>
+          <div class="song-cover cover-8"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Munjane Manjalli</h4>
+            <div class="artist">Raghu Dixit</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="munjane-manjalli" data-type="song" data-title="Munjane Manjalli" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="munjane-manjalli" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+        <div class="song-item" data-id="broken-angel-copy" data-song="Broken Angel (Copy)" data-artist="Arash" data-cover="cover-9" data-genre="pop" data-audio="Arash_-_Broken_Angel(256k)%20-%20Copy.mp3">
+          <span class="song-index">09</span>
+          <div class="song-cover cover-9"><i class="fas fa-music"></i></div>
+          <div class="song-details">
+            <h4>Broken Angel (Copy)</h4>
+            <div class="artist">Arash</div>
+            <div class="album">Local audio</div>
+          </div>
+          <div class="song-actions">
+            <span class="duration">--:--</span>
+            <div class="equalizer"><span></span><span></span><span></span><span></span></div>
+            <button class="song-like like-btn" data-id="broken-angel-copy" data-type="song" data-title="Broken Angel (Copy)" aria-label="Favourite"><i class="far fa-heart"></i></button>
+            <button class="song-playlist playlist-btn" data-id="broken-angel-copy" aria-label="Add to playlist" title="Add to playlist"><i class="fas fa-plus"></i></button>
+            <button class="play-btn" aria-label="Play"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAVOURITES ================= -->
+  <section class="favourites-section" id="favourites">
+    <div class="container">
+      <div class="row-header">
+        <div>
+          <div class="section-title">
+            <i class="fas fa-heart"></i> My Favourites
+            <span class="badge-count" id="favCount">0 items</span>
+          </div>
+          <div class="section-sub">Everything you've hearted, saved safely in your browser.</div>
+        </div>
+        <div class="fav-tabs">
+          <button class="filter-chip active" data-fav-tab="movies">Movies</button>
+          <button class="filter-chip" data-fav-tab="songs">Songs</button>
+          <button class="filter-chip" data-fav-tab="watchlater">Watch Later</button>
+          <button class="filter-chip" data-fav-tab="playlist">Playlist</button>
+        </div>
+      </div>
+
+      <div id="favMovies" class="movie-grid fav-grid"></div>
+      <div id="favSongs" class="song-list fav-song-list" style="display:none;"></div>
+      <div id="favWatchLater" class="movie-grid fav-grid" style="display:none;"></div>
+      <div id="favPlaylist" class="song-list fav-song-list" style="display:none;"></div>
+
+      <div class="empty-state" id="favEmpty" style="display:none;">
+        <i class="far fa-heart"></i>
+        <h3>Nothing here yet</h3>
+        <p>Tap the heart on any movie or song to add it to your favourites.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2025 CINEVERSE · Made with <i class="fas fa-heart"></i> for movie &amp; music lovers</p>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ================= NOW PLAYING BAR ================= -->
+  <div class="now-playing-bar" id="nowPlayingBar">
+    <div class="container now-playing-inner">
+      <div class="np-cover cover-1" id="npCover"><i class="fas fa-music"></i></div>
+      <div class="np-info">
+        <h5 id="npTitle">—</h5>
+        <p id="npArtist">—</p>
+      </div>
+      <div class="np-progress">
+        <span class="time" id="npCurrent">0:00</span>
+        <div class="progress-track" id="progressTrack">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="time" id="npDuration">0:00</span>
+      </div>
+      <div class="np-volume">
+        <button id="npMute" aria-label="Mute"><i class="fas fa-volume-high"></i></button>
+        <input type="range" id="npVolume" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+      </div>
+      <div class="np-controls">
+        <button id="npPrev" aria-label="Previous"><i class="fas fa-backward-step"></i></button>
+        <button class="np-play" id="npToggle" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
+        <button id="npNext" aria-label="Next"><i class="fas fa-forward-step"></i></button>
+        <button class="np-close" id="npClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TRAILER MODAL ================= -->
+  <div class="modal-overlay" id="trailerModal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle"><i class="fas fa-film"></i> Official Trailer</h3>
+        <button class="close-modal" id="closeModalBtn" aria-label="Close">&times;</button>
+      </div>
+      <div class="video-wrapper" id="videoWrapper"></div>
+    </div>
+  </div>
+
+  <!-- ================= TOASTS ================= -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- ================= BACK TO TOP ================= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Hidden audio -->
+  <audio id="audioPlayer" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
